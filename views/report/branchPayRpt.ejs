@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ('../header')%>
+  
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="public/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <%- include ('../topMenu')%>
+    <!-- Left side column. contains the logo and sidebar -->
+    <%- include ('../sideMenu')%>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          지점 포인트관리
+          <small></small>
+        </h1>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- 검색조건 -->
+        <div class="col-md-12">
+          <div class="box box-solid">
+            <div class="form-horizontal">
+              <div class="box-body">
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-1 control-label">거래구분</label>
+                  <div class="col-sm-1">
+                    <select class="form-control select2">
+                      <option selected="selected">전체</option>
+                      <option>상점</option>
+                      <option>지점</option>
+                      <option>기사</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-1">
+                    <select class="form-control select2">
+                      <option selected="selected">전체</option>
+                      <option>입금</option>
+                      <option>출금</option>
+                      <option>충전</option>
+                      <option>차감</option>
+                    </select>
+                  </div>
+                  <label for="inputEmail3" class="col-sm-1 control-label">기간</label>
+                  <div class="col-sm-2">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <div class="addon-border">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control pull-right" id="datepicker">
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-sm btn-info">검색</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box box-info">
+            <!-- <div class="box-header with-border"> -->
+              <!-- <h3 class="box-title"></h3> -->
+            <!-- </div> -->
+            <div class="box-body">
+              <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#myModal">출금요청</button>
+              <div class="pull-right">
+                <button type="button" class="btn btn-sm btn-info">PDF</button>
+                <button type="button" class="btn btn-sm btn-info">Excel</button>
+              </div>
+              <table id="dataTable" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <td>대상</td>
+                    <td>구분</td>
+                    <td>요청일자</td>
+                    <td>출금은행</td>
+                    <td>출금계좌</td>
+                    <td>예금주</td>
+                    <td>요청금액</td>
+                    <td>수수료</td>
+                    <td>입금액</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  </div>
+  <!-- ./wrapper -->
+  <%- include ('../footer')%>
+  
+  
+  
+  <!-- bootstrap datepicker -->
+  <script src="public/bower_components/bootstrap-datepicker/dist/js/ko.js"></script>
+  <script src="public/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script src="routes/report/branchPayRpt.js"></script>
+  <%- include ('modal/reqBranchPoint')%>
+</body>
+</html>

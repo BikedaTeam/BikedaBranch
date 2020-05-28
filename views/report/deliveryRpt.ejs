@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ('../header')%>
+  
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="public/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <%- include ('../topMenu')%>
+    <!-- Left side column. contains the logo and sidebar -->
+    <%- include ('../sideMenu')%>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          대행내역
+          <small></small>
+        </h1>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- 검색조건 -->
+        <div class="col-md-12">
+          <div class="box box-solid">
+            <div class="form-horizontal">
+              <div class="box-body">
+
+                <div class="form-group">
+
+                  <label for="inputEmail3" class="col-sm-1 control-label">상호</label>
+                  <div class="col-sm-2">
+                    <input type="input" class="form-control" id="inputEmail3">
+                  </div>
+
+                  <label for="inputEmail3" class="col-sm-1 control-label">기사 명</label>
+                  <div class="col-sm-1">
+                    <input type="input" class="form-control" id="inputEmail3">
+                  </div>
+
+                  <label for="inputEmail3" class="col-sm-1 control-label">상태</label>
+                  <div class="col-sm-1">
+                    <select class="form-control select2">
+                      <option selected="selected">전체</option>
+                      <option>완료</option>
+                      <option>취소</option>
+                      <option>기사</option>
+                    </select>
+                  </div>
+
+                  <label for="inputEmail3" class="col-sm-1 control-label">기간</label>
+                  <div class="col-sm-2">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <div class="addon-border">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control pull-right" id="datepicker">
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-sm btn-info">검색</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box box-info">
+            <!-- <div class="box-header with-border">
+            <h3 class="box-title"></h3>
+          </div> -->
+          <div class="box-body">
+            <!-- <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#myModal">출금요청</button> -->
+            <div class="pull-right">
+              <button type="button" class="btn btn-sm btn-info">PDF</button>
+              <button type="button" class="btn btn-sm btn-info">Excel</button>
+            </div>
+            <table id="dataTable" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>주문일자</th>
+                  <th>지연시간</th>
+                  <th>상호</th>
+                  <th rowspan="2">목적지</th>
+                  <th>배달기사</th>
+                  <th>결제수단</th>
+                </tr>
+                <tr>
+                  <th>주문시간</th>
+                  <th>도착시간</th>
+                  <th>상태</th>
+                  <th>배달료</th>
+                  <th>걸제금액</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+<%- include ('../footer')%>
+
+
+
+<!-- bootstrap datepicker -->
+<script src="public/bower_components/bootstrap-datepicker/dist/js/ko.js"></script>
+<script src="public/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+<script src="routes/report/riderPayRpt.js"></script>
+</body>
+</html>
